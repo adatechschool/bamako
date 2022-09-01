@@ -3,14 +3,14 @@ import SwiftUI
 struct ImageRow: View {
     
     var image: ImageModel
-
+    
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: image.thumbnailUrl) ){ image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    
+                
             } placeholder: {
                 Color.gray
             }

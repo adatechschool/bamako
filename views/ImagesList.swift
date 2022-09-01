@@ -2,18 +2,29 @@ import SwiftUI
 
 struct ImagesList: View {
     
-    var images : [ImageModel]
+    @StateObject var api = Api()
     
     var body: some View {
-        List (images) {image in
-            ImageRow(image: image)}
-            
+        
+        NavigationView{
+            ScrollView {
+                LazyVStack {
+                    ForEach(api.images, id: \.self) { image in
+                        ImageRow(image: image)
+                            .onAppear(){
+                                api.loadMoreContent(currentItem: image)
+                            }
+                    }
+                }
+            }
         }
-    }
-
-struct LandmarkList_Previews: PreviewProvider {
-    static var previews: some View {
-        ImagesList(images: [ImageModel]())
+        .navigationTitle("Datadome")
+        
     }
 }
 
+//struct LandmarkList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImagesList(images: [ImageModel]())
+//    }
+//}
