@@ -14,6 +14,9 @@
 		B58965DF28BC09E100708B2B /* bamakoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58965DE28BC09E100708B2B /* bamakoTests.swift */; };
 		B58965E928BC09E100708B2B /* bamakoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58965E828BC09E100708B2B /* bamakoUITests.swift */; };
 		B58965EB28BC09E100708B2B /* bamakoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58965EA28BC09E100708B2B /* bamakoUITestsLaunchTests.swift */; };
+		B58965F828BCAAAE00708B2B /* images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58965F728BCAAAD00708B2B /* images.swift */; };
+		B596D06D28BD4D630043B434 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596D06C28BD4D630043B434 /* ImageRow.swift */; };
+		B596D06F28BD5FDC0043B434 /* ImagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B596D06E28BD5FDC0043B434 /* ImagesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		B58965E428BC09E100708B2B /* bamakoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bamakoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58965E828BC09E100708B2B /* bamakoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bamakoUITests.swift; sourceTree = "<group>"; };
 		B58965EA28BC09E100708B2B /* bamakoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bamakoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B58965F728BCAAAD00708B2B /* images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = images.swift; sourceTree = "<group>"; };
+		B596D06C28BD4D630043B434 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		B596D06E28BD5FDC0043B434 /* ImagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,7 @@
 		B58965C128BC09D500708B2B = {
 			isa = PBXGroup;
 			children = (
-				B58965CC28BC09D500708B2B /* bamako */,
+				B58965CC28BC09D500708B2B /* views */,
 				B58965DD28BC09E100708B2B /* bamakoTests */,
 				B58965E728BC09E100708B2B /* bamakoUITests */,
 				B58965CB28BC09D500708B2B /* Products */,
@@ -91,23 +97,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B58965CC28BC09D500708B2B /* bamako */ = {
+		B58965CC28BC09D500708B2B /* views */ = {
 			isa = PBXGroup;
 			children = (
 				B58965CD28BC09D500708B2B /* bamakoApp.swift */,
 				B58965CF28BC09D500708B2B /* ContentView.swift */,
+				B596D06C28BD4D630043B434 /* ImageRow.swift */,
+				B596D06E28BD5FDC0043B434 /* ImagesList.swift */,
 				B58965D128BC09E000708B2B /* Assets.xcassets */,
-				B58965D328BC09E000708B2B /* Preview Content */,
+				B58965D328BC09E000708B2B /* model */,
 			);
-			path = bamako;
+			path = views;
 			sourceTree = "<group>";
 		};
-		B58965D328BC09E000708B2B /* Preview Content */ = {
+		B58965D328BC09E000708B2B /* model */ = {
 			isa = PBXGroup;
 			children = (
 				B58965D428BC09E000708B2B /* Preview Assets.xcassets */,
+				B58965F728BCAAAD00708B2B /* images.swift */,
 			);
-			path = "Preview Content";
+			path = model;
 			sourceTree = "<group>";
 		};
 		B58965DD28BC09E100708B2B /* bamakoTests */ = {
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B596D06F28BD5FDC0043B434 /* ImagesList.swift in Sources */,
+				B58965F828BCAAAE00708B2B /* images.swift in Sources */,
 				B58965D028BC09D500708B2B /* ContentView.swift in Sources */,
+				B596D06D28BD4D630043B434 /* ImageRow.swift in Sources */,
 				B58965CE28BC09D500708B2B /* bamakoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +428,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bamako/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -444,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bamako/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
