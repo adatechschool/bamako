@@ -22,40 +22,42 @@ class Api : ObservableObject {
     
     @Published var images = [ImageModel]()
     
-    var totalPages = 0
     var page : Int = 1
+    var start : Int = 0
+    var limit : Int = 20
     
     init() {
-        loadData { images in self.images = images
+        loadData(start: self.start, limit: self.limit) { images in
+            self.images = images
         }
     }
     
+    
     func loadMoreContent(currentItem item: ImageModel){
+        print(self.images.endIndex)
         let thresholdIndex = self.images.index(self.images.endIndex, offsetBy: -1)
-        if thresholdIndex == item.id, (page + 1) <= totalPages {
+        if thresholdIndex == item.id {
             page += 1
-            upperbound += 10
-            Api().loadData(completion: { images in
+            start += 20
+            limit += 20
+            Api().loadData(start : start, limit : limit, completion: { images in
                 self.images = images
+                
             })
         }
     }
     
-    func loadData(completion:@escaping ([ImageModel]) -> ()) {
-        
-        let start = 0
-        var limit = 10
-        
-        
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=\(start)&_\(upperbound)") else {
+    func loadData(start : Int, limit : Int, completion:@escaping ([ImageModel]) -> ()) {
+//    http://jsonplaceholder.typicode.com/photos?_start=0&_limit=5
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=\(start)&_limit=\(limit)") else {
             print("Invalid url...")
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            let images = try! JSONDecoder().decode([ImageModel].self, from: data!)
-            print(images)
+            let images = try? JSONDecoder().decode([ImageModel].self, from: data!)
+            print(images ?? [])
             DispatchQueue.main.async {
-                completion(images)
+                completion(images ?? [])
             }
         }.resume()
     }
