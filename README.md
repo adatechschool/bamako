@@ -1,5 +1,3 @@
-This is my technical test for Datadome.
-
 Intructions for running the project:
 
 - Download/open Xcode. 
