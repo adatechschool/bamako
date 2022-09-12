@@ -18,7 +18,7 @@ struct ImagesList: View {
                 }
             }
         }
-        .navigationTitle("Datadome")
+        .navigationTitle("")
         
     }
 }
